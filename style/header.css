@@ -1,0 +1,40 @@
+/* Header Styles */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    height: 30px;
+} 
+
+.logo {
+    height: 50px;
+}
+
+.search-bar {
+    flex: 1;
+    margin: 0 20px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.header-buttons button {
+    /* margin-left: 1 px; */
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.header-buttons button img {
+    height: 20px;
+}
+
+.header-buttons button:hover {
+    background-color: #0056b3;
+} 
