@@ -1,9 +1,9 @@
-/* Navbar Styles */
+/* Navbar Styles
 .navbar-container {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     background-color: #333;
-    padding: 10px 0;
+    padding: 10px;
 }
 
 .navbar-container button {
@@ -25,3 +25,128 @@
 .navbar-container button:active {
     background-color: #003f7f;
 }
+
+ */
+
+ /* Navbar Styles */
+.navbar-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    position: relative;
+}
+
+/* clasa aplicată peste .navbar-container când mutăm burgerul în header */
+.navbar-container.collapsed {
+  height: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  overflow: visible; /* nav-links rămâne în document, dar containerul nu ocupă spațiu */
+  background: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-links a button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a button:hover {
+    background-color: #0056b3;
+}
+
+.nav-links a button:active {
+    background-color: #003f7f;
+}
+
+/* Burger button */
+.burger {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive rules */
+/* @media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+        margin-left: 10px;
+    }
+
+    .nav-links a button {
+        width: 90%;
+        margin: 5px auto;
+    }
+} */
+
+@media (max-width: 1024px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: fixed;
+        top: 55px; /* dacă header are altă înălțime ajustează */
+        left: 0;
+        z-index: 9999;
+        padding: 10px 0;
+        background-color: rgba(51,51,51,0.95);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+        margin-left: 10px;
+    }
+
+    .nav-links a button {
+        width: 90%;
+        margin: 5px auto;
+    }
+
+    /* dacă burger-ul e în header, vrem ca butonul să arate bine acolo */
+    #mobile-burger-placeholder .burger {
+        display: block;
+        font-size: 26px;
+        background: none;
+        border: none;
+        color: #333; /* ajustează în funcție de culoarea headerului */
+        cursor: pointer;
+  }
+}
+
+
+

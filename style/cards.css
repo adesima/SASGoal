@@ -1,0 +1,61 @@
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* pe ecrane mai mici (tablete, telefoane) */
+@media (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  overflow: hidden;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cadran-image {
+  width: 70%;
+  /* aspect-ratio: 1/1; */
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  /* background-color: white; */
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); */
+}
+
+.competition-image {
+  width: 100%;
+  /* aspect-ratio: 1/1; */
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}

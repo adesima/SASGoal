@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>SASGoal - Top Players</title>
+      <link rel="stylesheet" href="../../style/header.css">
+      <link rel="stylesheet" href="../../style/navbar.css">
+  </head>
+  <body>
+      <!-- Include Header -->
+      <div id="header-placeholder"></div>
+      <script src="/script/header.js"></script>
+
+      <!-- Include Navbar -->
+      <div id="navbar-placeholder"></div>
+      <!-- <script>
+        fetch('../../components/navbar.html')
+          .then(response => response.text())
+          .then(data => {
+            const placeholder = document.getElementById('navbar-placeholder');
+            placeholder.innerHTML = data;
+
+            // --- initialization AFTER injection ---
+            const burger = document.getElementById('burger');
+            const navLinks = document.getElementById('nav-links');
+
+            if (burger && navLinks) {
+              // Toggle class and aria-expanded
+              burger.addEventListener('click', () => {
+                const isActive = navLinks.classList.toggle('active');
+                burger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+              });
+
+              // Optional: close menu when clicking outside or on link
+              document.addEventListener('click', (e) => {
+                if (!placeholder.contains(e.target) && navLinks.classList.contains('active')) {
+                  navLinks.classList.remove('active');
+                  burger.setAttribute('aria-expanded', 'false');
+                }
+              });
+
+              // Close menu when a nav link is clicked (helpful on mobile)
+              navLinks.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+                  navLinks.classList.remove('active');
+                  burger.setAttribute('aria-expanded', 'false');
+                }
+              });
+            } else {
+              console.warn('Navbar elements not found after injection.');
+            }
+          })
+          .catch(err => console.error('Failed to load navbar:', err));
+      </script> -->
+      <script src="/script/navbar.js"></script>
+
+      <main>
+          <h1>Top Players</h1>
+      </main>
+      <footer>
+          <p>&copy; 2025 SASGoal. All rights reserved.</p>
+      </footer>
+  </body>
+</html>

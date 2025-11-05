@@ -7,18 +7,35 @@
     background-color: #f8f9fa;
     border-bottom: 1px solid #ddd;
     height: 30px;
+    /* position: fixed; */
 } 
 
+/* ---------------------- Logo ---------------------- */
 .logo {
-    height: 50px;
+    flex-basis: 15%;
+    max-width: 15%;
+    display: flex;
+    /* text-align: left; */
+    justify-content: flex-start;
+    align-items: left;
 }
 
-.search-bar {
-    flex: 1;
-    margin: 0 20px;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.logo img {
+    width: 100%;
+    height: auto;
+    max-height: 70px;
+    object-fit: contain;
+    /* width: 10px;
+    height: 10px; */
+    ;
+}
+
+/* ---------------------- Buttons ---------------------- */
+.header-buttons {
+    flex-basis: 35%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 .header-buttons button {
@@ -38,3 +55,99 @@
 .header-buttons button:hover {
     background-color: #0056b3;
 } 
+
+/* ---------------------- Search Bar ---------------------- */
+/* .search-bar {
+    flex: 1;
+    margin: 0 20px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+} */
+/* .search-container {
+  position: relative;
+  width: 50%;
+  max-height: 15px;
+  border: 2px solid black;
+  border-radius: 30px;
+  padding: 5px;
+  align-items: center;
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+} */
+
+/* .search-bar {
+  width: 90%;
+  height: 2px;
+  padding: 8px 35px 8px 10px; // spațiu pentru iconiță 
+  border: none;
+  outline: none;
+  background-color: white;
+} */
+
+/* .search-icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+} */
+
+.search-container {
+  position: relative;
+  justify-content: center;
+  width: 50%;
+}
+
+.search-bar {
+  width: 90%;
+  padding: 8px 35px 8px 0px; /* spațiu pentru iconiță */
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: fit-content;
+  cursor: pointer;
+}
+
+
+
+/* @media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+  .logo, .search-bar-container, .buttons {
+    flex-basis: 100%;
+    justify-content: center;
+    margin: 5px 0;
+  }
+} */
+
+@media (max-width: 1024px) {
+  #mobile-burger-placeholder {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .burger {
+    display: block;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: #0a0000; /* sau alb, dacă headerul e închis la culoare */
+    cursor: pointer;
+  }
+}
+
+
+
+

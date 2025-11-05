@@ -1,12 +1,25 @@
 <header>
     <div class="header-container">
-        <img src="../images/logo.png" alt="Logo" class="logo">
-        <input type="text" placeholder="Search..." class="search-bar">
-        <div class="header-buttons">
-            <button><img src="/images/favourite_team-logo-lm.png" alt="Favourite Team"></button>
-            <button><img src="/images/user-icon-lm.png" alt="User"></button>
-            <button><img src="/images/help-icon-lm.png" alt="Help"></button>
-            <button><img src="/images/light_mode-icon.png" alt="Dark Mode"></button>
+        <!---------- Logo ------------->
+        <div class="logo">
+            <img src="/images/logo.png" alt="Logo">
         </div>
+
+        <!----------- Search Bar ----------->
+        <div class="search-container">
+            <input type="text" placeholder="Search..." class="search-bar">
+            <img src="/images/buttons/search-icon-lm.png" alt="Search" class="search-icon">
+        </div>
+
+        <!------------- Buttons ---------->
+        <div class="header-buttons">
+            <a href=""><button title="Favourite team"><img src="/images/buttons/favourite_team-logo-lm.png" alt="Favourite Team"></button></a>
+            <button title="Profile"><img src="/images/buttons/user-icon-lm.png" alt="Profile"></button>
+            <button title="Help"><img src="/images/buttons/help-icon-lm.png" alt="Help"></button>
+            <button title="Dark/Light mode"><img src="/images/buttons/dark_mode-icon.png" alt="Toggle between light and dark display mode"></button>
+        </div>
+
+        <!------------ Burger button (mobile) -------->
+        <div id="mobile-burger-placeholder"></div>
     </div>
 </header>
