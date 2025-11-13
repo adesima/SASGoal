@@ -33,8 +33,8 @@
     display: flex;
     justify-content: left;
     align-items: center;
-    background-color: #333;
-    padding: 10px;
+    background-color: var(--navbar-color);
+    /* padding: 10px; */
     position: relative;
 }
 
@@ -53,10 +53,11 @@
 }
 
 .nav-links a button {
-    background-color: #007bff;
+    background-color: var(--navbar-button-color);
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 100px;
+    margin: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
@@ -64,11 +65,11 @@
 }
 
 .nav-links a button:hover {
-    background-color: #0056b3;
+    background-color: var(--navbar-button-hover-color);
 }
 
 .nav-links a button:active {
-    background-color: #003f7f;
+    background-color: var(--navbar-button-hover-color);
 }
 
 /* Burger button */
@@ -113,14 +114,15 @@
     .nav-links {
         display: none;
         flex-direction: column;
-        width: 100%;
+        width: 80%;
         position: fixed;
         top: 55px; /* dacă header are altă înălțime ajustează */
-        left: 0;
+        right: 0;
         z-index: 9999;
         padding: 10px 0;
-        background-color: rgba(51,51,51,0.95);
+        background-color: var(--navbar-color);
         box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        height: 100%;
     }
 
     .nav-links.active {
@@ -143,7 +145,7 @@
         font-size: 26px;
         background: none;
         border: none;
-        color: #333; /* ajustează în funcție de culoarea headerului */
+        color: var(--burger-color); /* ajustează în funcție de culoarea headerului */
         cursor: pointer;
   }
 }

@@ -1,0 +1,37 @@
+:root { /* Tema implicită - dark mode */
+    /* General */
+    --bg-color: #1e1e1e;
+    --text-color: #ffffff;
+
+    /* Navbar */
+    --navbar-color: #008304;
+    --burger-color: #ffffff;
+    --navbar-button-color: #008304;
+    --navbar-button-hover-color: #004502;
+
+    /* Header */
+    --header-color: #1f1f1f;
+    --header-button-hover-color: #2c2c2c;
+
+    /* Leagues */
+    --card-color: #2b2b2b;
+}
+
+body.light-mode {
+    /* General */
+    --bg-color: #dae7d7;
+    --text-color: #121212;
+
+    /* Navbar */
+    --navbar-color: #40cf45;
+    --burger-color: #121212;
+    --navbar-button-color: #40cf45;
+    --navbar-button-hover-color: #007f00;
+    
+    /* Header */
+    --header-color: #afc5a9;
+    --header-button-hover-color: #859680;
+
+    /* Leagues */
+    --card-color: #e6e6e6;
+}

@@ -1,4 +1,4 @@
-fetch('../../components/navbar.html')
+fetch('/components/navbar.html')
     .then(response => response.text())
     .then(data => {
         const placeholder = document.getElementById('navbar-placeholder');

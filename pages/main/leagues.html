@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <base href="/SASGoal/">
+    <!-- <base href="/SASGoal/"> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SASGoal - Leagues</title>
-    <link rel="stylesheet" href="style/header.css">
-    <link rel="stylesheet" href="style/navbar.css">
-    <link rel="stylesheet" href="style/cards.css">
+    <link rel="stylesheet" href="/style/header.css">
+    <link rel="stylesheet" href="/style/navbar.css">
+    <link rel="stylesheet" href="/style/cards.css">
+    <link rel="stylesheet" href="/style/theme.css">
+    <link rel="stylesheet" href="/style/home-page.css">
 </head>
 <body>
     <!-- Include Header -->
     <div id="header-placeholder"></div>
-    <script src="script/header.js"></script>
+    <script src="/script/header.js"></script>
+    <script src="/script/theme.js"></script>
 
     <!-- Include Navbar -->
     <div id="navbar-placeholder"></div>
-    <script src="script/navbar.js"></script>
+    <script src="/script/navbar.js"></script>
 
     <main>
         <h1>Leagues</h1>
         <div class="card-container">
             <!-- Superliga -->
-            <div class="card" style="--bg-image: url('images/leagues/superliga/ro-bg.png');">
-                <img src="images/leagues/superliga/superliga-hr.png" alt="LaLiga" class="cadran-image">
-            </div>
+            <a href="/pages/leagues/superliga/superliga.html">
+                <div class="card" style="--bg-image: url('/images/leagues/superliga/ro-bg.png');">
+                    <img src="/images/leagues/superliga/superliga-hr.png" alt="LaLiga" class="cadran-image">
+                </div>
+            </a>
 
             <!-- Premier League -->
-            <div class="card" style="--bg-image: url('images/leagues/premier-league/eng-bg.png');">
-                <img src="images/leagues/premier-league/permier-league-hr.png" alt="LaLiga" class="cadran-image">
+            <div class="card" style="--bg-image: url('/images/leagues/premier-league/eng-bg.png');">
+                <img src="/images/leagues/premier-league/permier-league-hr.png" alt="LaLiga" class="cadran-image">
             </div>
 
             <!-- LaLiga -->
-            <div class="card" style="--bg-image: url('images/leagues/la-liga/es-bg.png');">
-                <img src="images/leagues/la-liga/laliga-hr.png" alt="LaLiga" class="cadran-image">
-            </div>
+            <a href="/pages/leagues/la-liga/la-liga.html">
+                <div class="card" style="--bg-image: url('/images/leagues/la-liga/es-bg.png');">
+                    <img src="/images/leagues/la-liga/laliga-hr.png" alt="LaLiga" class="cadran-image">
+                </div>
+            </a>
 
 
 
             <!-- Serie A -->
-            <div class="card" style="--bg-image: url('images/leagues/serie-a/it-bg.png');">
-                <img src="images/leagues/serie-a/serie-a-hr.png" alt="LaLiga" class="cadran-image">
+            <div class="card" style="--bg-image: url('/images/leagues/serie-a/it-bg.png');">
+                <img src="/images/leagues/serie-a/serie-a-hr.png" alt="LaLiga" class="cadran-image">
             </div>
         </div>
 

@@ -1,25 +1,34 @@
 <head>
     <!-- <base href="/SASGoal/"> -->
+     <!-- <script></script> -->
 </head>
 <header>
     <div class="header-container">
         <!---------- Logo ------------->
         <div class="logo">
-            <img src="images/logo.png" alt="Logo">
+            <img src="/images/logo.png" alt="Logo">
         </div>
 
         <!----------- Search Bar ----------->
         <div class="search-container">
             <input type="text" placeholder="Search..." class="search-bar">
-            <img src="images/buttons/search-icon-lm.png" alt="Search" class="search-icon">
+            <img id="search-icon" src="/images/buttons/search-icon-lm.png" alt="Search" class="search-icon">
         </div>
 
         <!------------- Buttons ---------->
         <div class="header-buttons">
-            <a href=""><button title="Favourite team"><img src="images/buttons/favourite_team-logo-lm.png" alt="Favourite Team"></button></a>
-            <button title="Profile"><img src="images/buttons/user-icon-lm.png" alt="Profile"></button>
-            <button title="Help"><img src="images/buttons/help-icon-lm.png" alt="Help"></button>
-            <button title="Dark/Light mode"><img src="images/buttons/dark_mode-icon.png" alt="Toggle between light and dark display mode"></button>
+            <button title="Favourite team">
+                <img id="fav-icon" src="/images/buttons/favourite_team-logo-dm.png" alt="Favourite Team">
+            </button>
+            <button title="Profile">
+                <img id="profile-icon" src="/images/buttons/user-icon-dm.png" alt="Profile">
+            </button>
+            <button title="Help">
+                <img id="help-icon" src="/images/buttons/help-icon-dm.png" alt="Help">
+            </button>
+            <button id="theme-btn" title="Dark/Light mode">
+                <img id="theme-icon" src="/images/buttons/theme-icon-dm.png" alt="Toggle between light and dark display mode">
+            </button>
         </div>
 
         <!------------ Burger button (mobile) -------->

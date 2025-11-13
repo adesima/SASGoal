@@ -1,0 +1,35 @@
+:root {
+    --laliga-bg-color: #790000;
+    --lalliga-bg-color-even: #802a2a;
+    --laliga-bg-color-hover: #ff8282;
+    --laliga-thead-color: #d10007;
+    --laliga-border-color: #4c4c4c;
+}
+
+body.light-mode {
+    --laliga-bg-color: #ff9595;
+    --lalliga-bg-color-even: #ffe0e0;
+    --laliga-bg-color-hover: #be7777;
+    --laliga-thead-color: #e41e26;
+    --laliga-border-color: #4c4c4c;
+}
+
+.league-table {
+  background-color: var(--laliga-bg-color);
+}
+
+.league-table thead {
+  background-color: var(--laliga-thead-color); 
+}
+
+.league-table td {
+  border-bottom: 2px solid var(--laliga-border-color);
+}
+
+.league-table tbody tr:nth-child(even) {
+  background-color: var(--lalliga-bg-color-even);
+}
+
+.league-table tbody tr:hover {
+  background-color: var(--laliga-bg-color-hover);
+}

@@ -1,0 +1,63 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa;
+  color: #222;
+  /* padding: 40px; */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #333;
+}
+
+.team-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.team-table thead {
+  background-color: #00449c; /* culoarea echipei, o poți schimba */
+  color: rgb(255, 255, 255);
+}
+
+.team-table th, 
+.team-table td {
+  padding: 12px 15px;
+  text-align: center;
+  font-style: bold;
+}
+
+.team-table tbody tr:nth-child(even) {
+  background-color: #f2f4f7;
+}
+
+.team-table tbody tr:hover {
+  background-color: #e6f0ff;
+  transition: background 0.3s ease;
+}
+
+.team-table img {
+  width: 45px;
+  height: auto;
+  /* border-radius: 5%; */
+  object-fit: cover;
+  /* border: 2px solid #ccc; */
+}
+
+/* Responsivitate */
+@media (max-width: 768px) {
+  .team-table th, .team-table td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+}

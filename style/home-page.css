@@ -4,3 +4,10 @@
     align-items: center;
     position: fixed;
 }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
