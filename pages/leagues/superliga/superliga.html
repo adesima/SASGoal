@@ -11,6 +11,18 @@
     <link rel="stylesheet" href="/style/theme.css">
     <link rel="stylesheet" href="/style/home-page.css">
     <link rel="stylesheet" href="/style/superliga.css">
+    <link rel="stylesheet" href="/style/footer.css">
+    <link rel="stylesheet" href="/style/help-popup.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6M1QMPTP6D"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6M1QMPTP6D');
+</script>
 </head>
 <body>
     <!-- Include Header -->
@@ -21,6 +33,20 @@
     <!-- Include Navbar -->
     <div id="navbar-placeholder"></div>
     <script src="/script/navbar.js"></script>
+
+    <!-- Include Up/Down Buttons -->
+    <div id="up-down-buttons"></div>
+    <script src="/script/up-down-buttons.js"></script>
+
+    <!-------- Pop-up Help ---------->
+    <div id="help-popup" class="help-popup">
+        <div class="help-content">
+            <button id="close-help" class="close-btn">&times;</button>
+            <h3>Despre Superliga</h3>
+            <p>Aceasta este pagina dedicata Superliga, prima liga din Romania. Aici puteti vedea clasamentul la zi, impreuna cu statisticile fiecarei echipe (nr. de meciuri, victorii, goluri marcate, etc.)</p>
+        </div>
+    </div>
+    <script src="/script/help-popup.js"></script>
 
     <table class="league-table">
         <thead>
@@ -249,5 +275,12 @@
             </tr>
         </tbody>
     </table>    
-
+    <footer class="site-footer">
+        <p>© 2025 SASGoal. All rights reserved.</p>
+        <div class="social-icons">
+            <img title="Instagram" src="/images/social-media/instagram-logo.png" alt="Instagram">
+            <img title="Facebook" src="/images/social-media/facebook-logo.png" alt="Facebook">
+            <img title="X (Twitter)" src="/images/social-media/x-logo.png" alt="X">
+        </div>
+    </footer>
 </body>

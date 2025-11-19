@@ -36,6 +36,7 @@
     background-color: var(--navbar-color);
     /* padding: 10px; */
     position: relative;
+    /* z-index: 10000; */
 }
 
 /* clasa aplicată peste .navbar-container când mutăm burgerul în header */
@@ -57,7 +58,7 @@
     color: white;
     border: none;
     padding: 10px 100px;
-    margin: 5px 10px;
+    /* margin: 5px 10px; */
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
@@ -82,72 +83,121 @@
     cursor: pointer;
 }
 
-/* Responsive rules */
-/* @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #333;
-        position: absolute;
-        top: 55px;
-        left: 0;
-        padding: 10px 0;
-    }
+.mobile-user-actions {
+    ddisplay: none; /* Ascuns pe desktop */
+}
 
-    .nav-links.active {
-        display: flex;
-    }
-
-    .burger {
-        display: block;
-        margin-left: 10px;
-    }
-
-    .nav-links a button {
-        width: 90%;
-        margin: 5px auto;
-    }
-} */
-
+/* --- MOBILE MENU STYLING --- */
 @media (max-width: 1024px) {
     .nav-links {
+        /* Layout de bază */
         display: none;
-        flex-direction: column;
-        width: 80%;
+        flex-direction: column; /* Elementele unul sub altul */
+        justify-content: flex-start; /* Începem de sus */
+        
+        /* Poziționare și Dimensiuni */
         position: fixed;
-        top: 55px; /* dacă header are altă înălțime ajustează */
+        top: 0; /* Începe chiar de sus de tot */
         right: 0;
+        width: 280px; /* Nu % - o lățime fixă arată mai bine pe mobil */
+        height: 100vh; /* Toată înălțimea ecranului */
+        
+        /* Design Vizual */
+        /* background-color: #1a1a1a; Un gri foarte închis, elegant */
+        /* Design Vizual - Stil "Glassmorphism" */
+        background-color: rgba(26, 26, 26, 0.85); /* Negru cu transparență (0.85 = 85% vizibil) */
+        backdrop-filter: blur(10px);              /* Efectul de ceață în spatele meniului */
+        -webkit-backdrop-filter: blur(10px);      /* Obligatoriu pentru să meargă pe iPhone/Safari */
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5); /* Umbră în stânga pentru profunzime */
+        padding: 80px 20px 20px 20px; /* Padding sus mare ca să nu se suprapună cu burgerul */
         z-index: 9999;
-        padding: 10px 0;
-        background-color: var(--navbar-color);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        height: 100%;
+        
+        /* Animație (Slide in) - Opțional, necesită JS pentru toggle de clasă */
+        /* transform: translateX(100%); */
+        /* transition: transform 0.3s ease-in-out; */
     }
 
+    /* Dacă folosești clasa .active pentru a-l afișa */
     .nav-links.active {
         display: flex;
+        /* transform: translateX(0); -> Dacă folosești animația de slide */
     }
 
+    /* Stilizarea Link-urilor (Butoanelor) din meniu */
+    .nav-links a button {
+        background-color: transparent; /* Fără fundal albastru */
+        color: #fff;
+        width: 100%;
+        text-align: left; /* Textul aliniat la stânga arată mai bine în liste */
+        padding: 15px 10px;
+        margin: 5px 0;
+        border-bottom: 1px solid #333; /* O linie subtilă de separare */
+        border-radius: 0; /* Fără colțuri rotunjite */
+        font-size: 18px;
+        font-weight: 500;
+        transition: all 0.2s;
+    }
+
+    /* Efect la hover pe mobil */
+    .nav-links a button:hover {
+        background-color: #333; /* Se luminează puțin la atingere */
+        color: #4CAF50; /* Verdele din logo-ul tău la text */
+        padding-left: 20px; /* Mică animație de mișcare spre dreapta */
+        border-left: 4px solid #4CAF50; /* Bară verde în stânga */
+    }
+
+    /* --- Zona de jos (User Actions) --- */
+    .mobile-user-actions {
+        display: flex;
+        justify-content: space-around; /* Distribuite egal */
+        align-items: center;
+        margin-top: auto; /* Această linie magică împinge totul jos de tot! */
+        padding-top: 20px;
+        border-top: 1px solid #444;
+        width: 100%;
+    }
+
+    .mobile-user-actions button, 
+    .mobile-user-actions a button {
+        background: transparent !important;
+        padding: 10px !important;
+        margin: 0 !important;
+        font-size: 24px; /* Iconițe mai mari */
+    }
+    
+    /* Dacă folosești font icons sau imagini */
+    .mobile-user-actions i,
+    .mobile-user-actions img {
+        font-size: 24px;
+        color: #bbb; /* Gri deschis */
+        transition: color 0.3s;
+    }
+    
+    .mobile-user-actions button:hover i {
+        color: #fff; /* Alb la hover */
+    }
+
+    /* Burger Button Vizibil */
     .burger {
         display: block;
-        margin-left: 10px;
+        
+        /* Îl poziționăm strict în raport cu header-ul, nu cu ecranul */
+        position: absolute; 
+        
+        /* Centrare Verticală Perfectă */
+        top: 50%; 
+        transform: translateY(-50%); 
+        
+        /* Poziționare la dreapta */
+        right: 20px; 
+        
+        /* Să fie peste meniul deschis ca să poți închide */
+        z-index: 10001; 
+        
+        /* Resetăm marginile ca să nu ne încurce */
+        margin: 0;
+        padding: 0;
     }
-
-    .nav-links a button {
-        width: 90%;
-        margin: 5px auto;
-    }
-
-    /* dacă burger-ul e în header, vrem ca butonul să arate bine acolo */
-    #mobile-burger-placeholder .burger {
-        display: block;
-        font-size: 26px;
-        background: none;
-        border: none;
-        color: var(--burger-color); /* ajustează în funcție de culoarea headerului */
-        cursor: pointer;
-  }
 }
 
 

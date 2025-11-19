@@ -1,79 +1,206 @@
-.carousel {
-  position: relative;
-  max-width: 800px;
-  margin: auto;
-  overflow: hidden;
-  border-radius: 12px;
+/* .carousel-container {
+    width: 600px; 
+    position: relative; /
+    overflow: hidden; 
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+    margin: 20px auto; 
+    aspect-ratio: 16 / 9; 
+    height: auto;
 }
 
-.carousel-inner {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
+
+@supports not (aspect-ratio: 16 / 9) {
+    .carousel-container {
+        height: 0;
+        padding-top: 56.25%; 
+    }
+    .carousel-slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
-.carousel-item {
-  min-width: 100%;
-  flex-shrink: 0;
+.carousel-slider {
+    display: flex; 
+    transition: transform 0.5s ease-in-out;
 }
 
-.carousel-item img {
-  width: 100%;
-  display: block;
+.carousel-slide {
+    min-width: 100%; 
+    flex-shrink: 0; 
 }
 
-/* Indicatori (bulinele de jos) */
+.carousel-slide img {
+    
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%); 
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%; 
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; 
+    transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-btn.prev {
+    left: 15px; 
+}
+
+.carousel-btn.next {
+    right: 15px; 
+}
+
 .carousel-indicators {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
+    position: absolute;
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: flex;
+    gap: 10px; 
+    z-index: 10;
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  background-color: #888;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.dot.active {
-  background-color: white;
+.indicator-dot:hover {
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
-/* Săgeți pentru PC */
-.carousel-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.6);
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 50%;
-  user-select: none;
-  transition: background-color 0.3s;
+.indicator-dot.active {
+    background-color: white;
+}*/
+
+/* Containerul principal - definește mărimea și ascunde ce e în afara lui */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1024px; /* Poți ajusta lățimea maximă */
+    height: 575px;
+    margin: 2rem auto; /* Centrat pe pagină */
+    overflow: hidden; /* Ascunde slide-urile care nu sunt active */
+    border-radius: 10px; /* Colțuri rotunjite, arată mai modern */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.carousel-control:hover {
-  background-color: rgba(255, 255, 255, 0.9);
+/* Banda care ține toate slide-urile */
+.carousel-slider {
+    display: flex; /* Pune slide-urile unul lângă altul */
+    width: 100%;
+    height: 100%; /* Înălțime fixă pentru carusel */
+    transition: transform 0.5s ease-in-out; /* Animația de alunecare */
 }
 
-.carousel-control.prev {
-  left: 10px;
+/* Fiecare slide individual */
+.carousel-slide {
+    min-width: 100%; /* Fiecare slide ocupă 100% din container */
 }
 
-.carousel-control.next {
-  right: 10px;
+/* Imaginile din slide */
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Taie marginile imaginii ca să umple spațiul perfect */
+    display: block;
 }
 
-/* Ascunde săgețile pe mobil */
+/* --- Butoanele Prev/Next --- */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+    transition: background 0.3s;
+    border-radius: 50%; /* Butoane rotunde */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* --- Indicatorii (Bulinele) --- */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.indicator-dot.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+
+/* --- RESPONSIVE 1024px --- */
 @media (max-width: 1024px) {
-  .carousel-control {
-    display: none;
-  }
+    .carousel-container {
+        max-width: 100%;  /* Ocupă tot ecranul */
+        width: 100%;
+        margin: 0;        /* Eliminăm marginile laterale ca să lipească de margini */
+        border-radius: 0; /* Opțional: Arată mai bine fără colțuri rotunde când e full-width */
+        
+        /* Aici este magia pentru 16:9 */
+        height: auto;       /* Anulăm înălțimea fixă de 500px */
+        aspect-ratio: 16/9; /* Browserul calculează automat înălțimea */
+    }
+
+    /* Ajustăm mărimea butoanelor să nu fie prea mari pe ecrane mici */
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
 }

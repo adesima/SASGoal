@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil & Contact - SASGoal</title>
+
+    <link rel="stylesheet" href="/style/header.css">
+    <link rel="stylesheet" href="/style/navbar.css">
+    <link rel="stylesheet" href="/style/theme.css">
+    <link rel="stylesheet" href="/style/footer.css">
+    <link rel="stylesheet" href="/style/help-popup.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6M1QMPTP6D"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6M1QMPTP6D');
+    </script>
+
+    <style>
+    /* --- CSS Actualizat --- */
+    
+    body {
+        font-family: Arial, sans-serif;
+        /* Am scos regulile de flexbox care forțau centrarea pe tot ecranul */
+        background-color: var(--bg-color); /* Păstrăm fundalul întunecat specific site-ului tău */
+        margin: 0;
+        color: var(--text-color);
+    }
+
+    /* Dacă meniul tău nu are deja stiluri care să-l țină sus, 
+       acesta va sta natural sus. Formularul vine dedesubt. */
+
+    .form-container {
+        background-color: var(--form-bg-color);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        width: 400px;
+        
+        /* AICI ESTE SCHIMBAREA: */
+        /* Folosim margin: auto pentru a-l centra orizontal */
+        /* Și un margin-top pentru a-l distanța de meniul de sus */
+        margin: 50px auto; 
+    }
+
+    @media screen and (max-width: 600px) {
+        .form-container {
+            /* Imediat ce ecranul e mai mic de 1024px, lățimea devine 95% */
+            width: 80%; 
+        }
+    }
+
+    h2 {
+        text-align: center;
+        color: var(--text-color);
+        margin-bottom: 20px;
+    }
+
+    /* ... Restul stilurilor (input, button, errors) rămân la fel ... */
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: var(--text-color);
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        height: 100px;
+        resize: vertical;
+    }
+
+    button#trimiteBtn {
+        width: 100%;
+        padding: 12px;
+        background-color: var(--form-btn-color);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button#trimiteBtn:hover {
+        background-color: var(--form-btn-hover-color);
+    }
+
+    .error-message {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+    }
+
+    #status-global {
+        text-align: center;
+        margin-top: 15px;
+        font-weight: bold;
+        color: white; /* Textul de succes să fie alb dacă fundalul e negru, sau îl lași negru dacă e în caseta albă */
+    }
+    
+    .success {
+        color: #28a745 !important; /* Verde pentru succes */
+    }
+</style>
+</head>
+<body>
+    <!-- Include Header -->
+        <div id="header-placeholder"></div>
+        <script src="/script/header.js"></script>
+        <script src="/script/theme.js"></script>
+
+        <!-- Include Navbar -->
+        <div id="navbar-placeholder"></div>
+        <script src="/script/navbar.js"></script>
+
+        <!-- Include Up/Down Buttons -->
+        <div id="up-down-buttons"></div>
+        <script src="/script/up-down-buttons.js"></script>
+
+        <!-------- Pop-up Help ---------->
+        <div id="help-popup" class="help-popup">
+            <div class="help-content">
+                <button id="close-help" class="close-btn">&times;</button>
+                <h3>Despre Contact</h3>
+                <p>Foloseste acest formular pentru a ne contacta cu privire la orice plangeri sau observatii legate de site.</p>
+            </div>
+        </div>
+        <script src="/script/help-popup.js"></script>
+
+    <div class="form-container">
+        <h2>Contactează-ne</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="nume">Nume</label>
+                <input type="text" id="nume" placeholder="Ex: Popescu">
+                <span class="error-message" id="err-nume">Numele trebuie să înceapă cu literă mare și să conțină doar litere.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="prenume">Prenume</label>
+                <input type="text" id="prenume" placeholder="Ex: Andrei">
+                <span class="error-message" id="err-prenume">Prenumele trebuie să înceapă cu literă mare și să conțină doar litere.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Ex: exemplu@email.com">
+                <span class="error-message" id="err-email">Adresa de email trebuie să conțină '@'.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="telefon">Telefon</label>
+                <input type="text" id="telefon" placeholder="Ex: 0712345678">
+                <span class="error-message" id="err-telefon">Numărul trebuie să aibă exact 10 cifre.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="mesaj">Mesaj</label>
+                <textarea id="mesaj" placeholder="Scrie mesajul tău aici..."></textarea>
+                <span class="error-message" id="err-mesaj">Te rugăm să scrii un mesaj.</span>
+            </div>
+
+            <button type="button" id="trimiteBtn">Trimite</button>
+            
+            <div id="status-global"></div>
+        </form>
+    </div>
+
+    <script>
+        // --- JavaScript: Validarea Formularului ---
+        
+        document.getElementById('trimiteBtn').addEventListener('click', function() {
+            // 1. Selectăm elementele
+            const numeInput = document.getElementById('nume');
+            const prenumeInput = document.getElementById('prenume');
+            const emailInput = document.getElementById('email');
+            const telefonInput = document.getElementById('telefon');
+            const mesajInput = document.getElementById('mesaj');
+            const statusGlobal = document.getElementById('status-global');
+
+            // Selectăm zonele de eroare pentru a le afișa/ascunde
+            const errNume = document.getElementById('err-nume');
+            const errPrenume = document.getElementById('err-prenume');
+            const errEmail = document.getElementById('err-email');
+            const errTelefon = document.getElementById('err-telefon');
+            const errMesaj = document.getElementById('err-mesaj');
+
+            // Variabila care ne spune daca totul e valid
+            let formIsValid = true;
+
+            // Resetăm mesajele anterioare (ascundem erorile, curatam statusul)
+            [errNume, errPrenume, errEmail, errTelefon, errMesaj].forEach(el => el.style.display = 'none');
+            statusGlobal.innerText = "";
+            statusGlobal.className = "";
+
+            // --- VALIDĂRI ---
+
+            // 2. Validare Nume: Începe cu majusculă, doar litere și cratimă
+            // Regex explicat: ^[A-Z] (incepe cu mare) + [a-zA-Z-]* (urmat de litere sau cratima) + $ (sfarsit)
+            const numeRegex = /^[A-Z][a-zA-Z-]*$/;
+            if (!numeRegex.test(numeInput.value) || numeInput.value.trim() === "") {
+                errNume.style.display = 'block';
+                formIsValid = false;
+            }
+
+            // 3. Validare Prenume: La fel ca la nume
+            if (!numeRegex.test(prenumeInput.value) || prenumeInput.value.trim() === "") {
+                errPrenume.style.display = 'block';
+                formIsValid = false;
+            }
+
+            // 4. Validare Email: Trebuie să conțină '@'
+            if (!emailInput.value.includes('@')) {
+                errEmail.style.display = 'block';
+                formIsValid = false;
+            }
+
+            // 5. Validare Telefon: Doar cifre, lungime exact 10
+            // Regex: ^\d{10}$ (fix 10 digits)
+            const telefonRegex = /^\d{10}$/;
+            if (!telefonRegex.test(telefonInput.value)) {
+                errTelefon.style.display = 'block';
+                formIsValid = false;
+            }
+
+            // 6. Validare Mesaj: Să nu fie gol
+            if (mesajInput.value.trim() === "") {
+                errMesaj.style.display = 'block';
+                formIsValid = false;
+            }
+
+            // --- FINAL ---
+            
+            if (formIsValid) {
+                // Dacă totul e corect
+                statusGlobal.innerText = "Mesajul a fost trimis cu succes!";
+                statusGlobal.className = "success";
+
+                // Golim casetele
+                numeInput.value = "";
+                prenumeInput.value = "";
+                emailInput.value = "";
+                telefonInput.value = "";
+                mesajInput.value = "";
+            } else {
+                // Putem pune și un mesaj general de eroare dacă dorim
+                // statusGlobal.innerText = "Verifică câmpurile roșii.";
+                // statusGlobal.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>

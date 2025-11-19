@@ -9,6 +9,19 @@
       <link rel="stylesheet" href="/style/navbar.css">
       <link rel="stylesheet" href="/style/theme.css">
       <link rel="stylesheet" href="/style/home-page.css">
+      <link rel="stylesheet" href="/style/footer.css">
+      <link rel="stylesheet" href="/style/video.css">
+      <link rel="stylesheet" href="/style/help-popup.css">
+
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-6M1QMPTP6D"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-6M1QMPTP6D');
+      </script>
   </head>
   <body>
       <!-- Include Header -->
@@ -59,11 +72,52 @@
       </script> -->
       <script src="/script/navbar.js"></script>
 
+      <!-- Include Up/Down Buttons -->
+      <div id="up-down-buttons"></div>
+      <script src="/script/up-down-buttons.js"></script>
+
+      <!-------- Pop-up Help ---------->
+      <div id="help-popup" class="help-popup">
+          <div class="help-content">
+              <button id="close-help" class="close-btn">&times;</button>
+              <h3>Despre Top Players</h3>
+              <p>Aceasta pagina este dedicata fotbalistilor care au avut realizari remarcabile in sezonul 2025/26.</p>
+          </div>
+      </div>
+      <script src="/script/help-popup.js"></script>
+
       <main>
-          <h1>Top Players</h1>
+          <h1 style="text-align: center;">Top 10 Strickers in 2025</h1>
+          <div class="video-container">
+              <iframe 
+                  src="https://www.youtube.com/watch?v=otj6oE5ke4I" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowfullscreen>
+              </iframe>
+          </div>
+
+          <hr style="border: 0; height: 3px; background-color: #333; margin: 20px 0;">
+
+          <h1 style="text-align: center;">Best Players in Premier League 2025/26 so far</h1>
+          <div class="video-container">
+              <iframe 
+                  src="https://www.youtube.com/watch?v=D4JutXwUgNw" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowfullscreen>
+              </iframe>
+          </div>
       </main>
-      <footer>
-          <p>&copy; 2025 SASGoal. All rights reserved.</p>
-      </footer>
+      <footer class="site-footer">
+        <p>© 2025 SASGoal. All rights reserved.</p>
+        <div class="social-icons">
+            <img title="Instagram" src="/images/social-media/instagram-logo.png" alt="Instagram">
+            <img title="Facebook" src="/images/social-media/facebook-logo.png" alt="Facebook">
+            <img title="X (Twitter)" src="/images/social-media/x-logo.png" alt="X">
+        </div>
+    </footer>
   </body>
 </html>

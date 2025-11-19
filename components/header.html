@@ -1,37 +1,49 @@
 <head>
     <!-- <base href="/SASGoal/"> -->
-     <!-- <script></script> -->
 </head>
 <header>
     <div class="header-container">
         <!---------- Logo ------------->
         <div class="logo">
-            <img src="/images/logo.png" alt="Logo">
+            <a href="/index.html">
+                <img id="logo" src="/images/SASGoal-dm.png" alt="SASGoal">
+            </a>
         </div>
 
         <!----------- Search Bar ----------->
-        <div class="search-container">
-            <input type="text" placeholder="Search..." class="search-bar">
-            <img id="search-icon" src="/images/buttons/search-icon-lm.png" alt="Search" class="search-icon">
+        <div class="search-wrapper" id="search-wrapper">
+            <button id="mobile-search-btn" class="icon-btn mobile-only" title="Search">
+                <img id="search-icon" src="/images/buttons/search-icon-dm.png" alt="Search">
+            </button>
+
+            <div class="search-input-container">
+                <input type="text" placeholder="Search..." class="search-bar" id="search-input">
+                <button class="search-submit-btn">
+                    <img id="search-icon" src="/images/buttons/search-icon-dm.png" alt="Search">
+                </button>
+            </div>
         </div>
 
         <!------------- Buttons ---------->
-        <div class="header-buttons">
-            <button title="Favourite team">
-                <img id="fav-icon" src="/images/buttons/favourite_team-logo-dm.png" alt="Favourite Team">
-            </button>
-            <button title="Profile">
-                <img id="profile-icon" src="/images/buttons/user-icon-dm.png" alt="Profile">
-            </button>
-            <button title="Help">
-                <img id="help-icon" src="/images/buttons/help-icon-dm.png" alt="Help">
-            </button>
-            <button id="theme-btn" title="Dark/Light mode">
-                <img id="theme-icon" src="/images/buttons/theme-icon-dm.png" alt="Toggle between light and dark display mode">
-            </button>
+        <div class="header-actions">
+            <div class="user-buttons">
+                <a href="/pages/profile.html" title="Profile">
+                    <button class="icon-btn">
+                        <img id="profile-icon" src="/images/buttons/user-icon-dm.png" alt="Profile">
+                    </button>
+                </a>
+                <button id="help-trigger-btn" class="icon-btn" title="Help">
+                    <img id="help-icon" src="/images/buttons/help-icon-dm.png" alt="Help">
+                </button>
+                <button id="theme-btn" class="icon-btn" title="Dark/Light mode">
+                    <img id="theme-icon" src="/images/buttons/theme-icon-dm.png" alt="Toggle between light and dark display mode">
+                </button>
+            </div>
         </div>
 
         <!------------ Burger button (mobile) -------->
         <div id="mobile-burger-placeholder"></div>
+
+        <!-- <script src="/script/help-popup.js" defer></script> -->
     </div>
 </header>

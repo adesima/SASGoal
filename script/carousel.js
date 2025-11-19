@@ -1,87 +1,64 @@
- // Include carousel
-fetch('../../components/carousel.html')
-    .then(res => res.text())
-    .then(data => {
-    document.getElementById('carousel-placeholder').innerHTML = data;
-    const script = document.createElement('script');
-    script.src = '../../js/carousel.js';
-    document.body.appendChild(script);
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.carousel-slider');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dots = document.querySelectorAll('.indicator-dot');
+
+    let counter = 0;
+    const totalSlides = slides.length;
+
+    // Funcția principală de actualizare a caruselului
+    const updateCarousel = () => {
+        // Mutăm slider-ul cu un procent (0%, -100%, -200% etc.)
+        slider.style.transform = `translateX(-${counter * 100}%)`;
+
+        // Actualizăm bulinele active
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[counter].classList.add('active');
+    };
+
+    // Butonul Next
+    nextBtn.addEventListener('click', () => {
+        counter++;
+        if (counter >= totalSlides) {
+            counter = 0; // Resetăm la prima imagine
+        }
+        updateCarousel();
     });
 
-const carousel = document.querySelector('.carousel');
-const items = document.querySelectorAll('.carousel-item');
-const dots = document.querySelectorAll('.dot');
-const prevBtn = document.querySelector('.carousel-control.prev');
-const nextBtn = document.querySelector('.carousel-control.next');
+    // Butonul Prev
+    prevBtn.addEventListener('click', () => {
+        counter--;
+        if (counter < 0) {
+            counter = totalSlides - 1; // Mergem la ultima imagine
+        }
+        updateCarousel();
+    });
 
-let currentIndex = 0;
-let interval;
+    // Funcționalitate pentru buline (dots)
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            counter = index;
+            updateCarousel();
+        });
+    });
 
-// Funcție pentru afișarea imaginii curente
-function showSlide(index) {
-  if (index >= items.length) index = 0;
-  if (index < 0) index = items.length - 1;
-  currentIndex = index;
+    // Opțional: Auto-play (schimbă imaginea singur la 5 secunde)
+    let autoSlide = setInterval(() => {
+        nextBtn.click();
+    }, 3500);
 
-  const offset = -index * 100;
-  document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+    // Oprim auto-play când userul pune mouse-ul pe carusel
+    const container = document.querySelector('.carousel-container');
+    container.addEventListener('mouseenter', () => {
+        clearInterval(autoSlide);
+    });
 
-  dots.forEach(dot => dot.classList.remove('active'));
-  dots[index].classList.add('active');
-}
-
-// Auto slide la fiecare 10 secunde
-function startAutoSlide() {
-  interval = setInterval(() => {
-    showSlide(currentIndex + 1);
-  }, 10000);
-}
-
-function stopAutoSlide() {
-  clearInterval(interval);
-}
-
-// Evenimente pentru butoanele de control
-if (prevBtn && nextBtn) {
-  prevBtn.addEventListener('click', () => {
-    stopAutoSlide();
-    showSlide(currentIndex - 1);
-    startAutoSlide();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    stopAutoSlide();
-    showSlide(currentIndex + 1);
-    startAutoSlide();
-  });
-}
-
-// Evenimente pentru buline
-dots.forEach((dot, index) => {
-  dot.addEventListener('click', () => {
-    stopAutoSlide();
-    showSlide(index);
-    startAutoSlide();
-  });
+    // Repornim auto-play când userul ia mouse-ul
+    container.addEventListener('mouseleave', () => {
+        autoSlide = setInterval(() => {
+            nextBtn.click();
+        }, 5000);
+    });
 });
-
-// Funcționalitate swipe pentru mobil
-let startX = 0;
-carousel.addEventListener('touchstart', e => {
-  startX = e.touches[0].clientX;
-});
-carousel.addEventListener('touchend', e => {
-  const endX = e.changedTouches[0].clientX;
-  const diff = startX - endX;
-
-  if (Math.abs(diff) > 50) {
-    stopAutoSlide();
-    if (diff > 0) showSlide(currentIndex + 1); // swipe left
-    else showSlide(currentIndex - 1); // swipe right
-    startAutoSlide();
-  }
-});
-
-// Inițializare
-showSlide(0);
-startAutoSlide();

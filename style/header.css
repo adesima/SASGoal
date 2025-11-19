@@ -1,5 +1,5 @@
 /* Header Styles */
-.header-container {
+/* .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -7,31 +7,26 @@
     background-color: var(--header-color);
     border-bottom: 1px solid #ddd;
     height: 30px;
-    /* position: fixed; */
-} 
+}  */
 
 /* ---------------------- Logo ---------------------- */
-.logo {
+/* .logo {
     flex-basis: 15%;
     max-width: 15%;
     display: flex;
-    /* text-align: left; */
     justify-content: flex-start;
     align-items: left;
-}
+} */
 
-.logo img {
+/* .logo img {
     width: 100%;
     height: auto;
     max-height: 70px;
     object-fit: contain;
-    /* width: 10px;
-    height: 10px; */
-    ;
-}
+} */
 
 /* ---------------------- Buttons ---------------------- */
-.header-buttons {
+/* .header-buttons {
     flex-basis: 35%;
     display: flex;
     justify-content: flex-end;
@@ -39,7 +34,6 @@
 }
 
 .header-buttons button {
-    /* margin-left: 1 px; */
     padding: 10px 15px;
     border: none;
     background-color: var(--header-color);
@@ -54,7 +48,7 @@
 
 .header-buttons button:hover {
     background-color: var(--header-button-hover-color);
-} 
+}  */
 
 /* ---------------------- Search Bar ---------------------- */
 /* .search-bar {
@@ -94,7 +88,8 @@
   cursor: pointer;
 } */
 
-.search-container {
+/* ---------------------------------- */
+/* .search-container {
   position: relative;
   justify-content: center;
   width: 50%;
@@ -102,7 +97,7 @@
 
 .search-bar {
   width: 90%;
-  padding: 8px 35px 8px 0px; /* spațiu pentru iconiță */
+  padding: 8px 35px 8px 0px; 
   border: 1px solid #ccc;
   border-radius: 20px;
   outline: none;
@@ -116,7 +111,7 @@
   width: 20px;
   height: fit-content;
   cursor: pointer;
-}
+} */
 
 
 
@@ -131,7 +126,7 @@
   }
 } */
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   #mobile-burger-placeholder {
     display: flex;
     justify-content: flex-end;
@@ -143,7 +138,7 @@
     font-size: 26px;
     background: none;
     border: none;
-    color: var(--burger-color); /* sau alb, dacă headerul e închis la culoare */
+    color: var(--burger-color); 
     cursor: pointer;
   }
 
@@ -154,6 +149,264 @@
   .header-buttons button {
     background-color: var(--navbar-color);
   }
+}*/
+
+
+
+/* Reset basic */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --header-height: 60px; /* Inaltime mai rezonabila */
+    --header-bg: var(--header-color, #ffffff); /* Fallback color */
+    --primary-color: #007bff; /* Sau culoarea brandului tau */
+    --border-radius: 50px;
+}
+
+/* Header Styles */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: var(--header-bg);
+    border-bottom: 1px solid #ddd;
+    height: var(--header-height);
+    position: relative;
+    gap: 15px; /* Spatiu intre elementele mari (Logo, Search, Butoane) */
+} 
+
+/* ---------------------- Logo ---------------------- */
+/* Adăugăm și selectorul .logo pentru a fi siguri că prindem elementul din HTML */
+.logo-container, .logo {
+    flex: 0 0 auto; 
+    height: 100%;      /* Ocupă toată înălțimea header-ului (60px) */
+    display: flex;
+    align-items: center; /* Centrează imaginea perfect pe verticală */
+    max-width: 2000px;    /* Lățime maximă rezonabilă */
+    overflow: hidden;    /* Siguranță: nu lasă nimic să iasă din cutie */
+}
+
+.logo-container img, .logo img {
+    height: auto;        /* Lasă aspect ratio-ul să decidă */
+    max-height: 45px;    /* SOLUȚIA: Limităm strict înălțimea (Header e 60px, deci 45px intră lejer) */
+    width: auto;         /* Lățimea se ajustează automat */
+    object-fit: contain; /* Se asigură că se vede toată sigla */
+    display: block;      /* Elimină spațiile fantomă specifice imaginilor */
+}
+
+/* ---------------------- Search Bar (Modern) ---------------------- */
+.search-wrapper {
+    flex: 1 1 auto; /* Ocupa spatiul ramas disponibil */
+    max-width: 500px; /* Nu se face mai mare de atat */
+    display: flex;
+    justify-content: center;
+}
+
+.search-input-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    width: 100%;
+    height: 38px;
+    padding: 0 40px 0 15px; /* Padding dreapta pt iconita */
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    background-color: #f9f9f9;
+    outline: none;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.search-bar:focus {
+    background-color: #fff;
+    border-color: var(--primary-color, #007bff);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.search-submit-btn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-submit-btn img {
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+}
+
+.search-submit-btn:hover img {
+    opacity: 1;
+}
+
+/* Ascundem trigger-ul de mobil pe desktop */
+.mobile-only {
+    display: none;
+}
+
+/* ---------------------- Buttons & Actions ---------------------- */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto; /* Nu se strange */
+}
+
+.user-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.icon-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.icon-btn img {
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+}
+
+/* Placeholder burger */
+#mobile-burger-placeholder {
+    display: none; /* Ascuns pe desktop */
+}
+
+/* ---------------------- RESPONSIVE ---------------------- */
+
+/* 1. Tablet Mode (Sub 1024px) */
+@media (max-width: 1024px) {
+    /* Afisam burgerul */
+    #mobile-burger-placeholder {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    /* Ascundem butoanele user ca sa facem loc burgerului? 
+       SAU le lasam. Utilizatorul a zis ca burgerul e meniu de navigare.
+       Voi pastra butoanele de profil/tema vizibile.
+    */
+    
+    .search-wrapper {
+        max-width: 350px; /* Micsoram bara de search putin */
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE FIX (SUB 600px)
+   ============================================ */
+@media (max-width: 600px) {
+    .header-container {
+        padding: 0 10px;
+        height: 55px;
+        gap: 5px;
+    }
+
+    /* 1. LOGO - Păstrat mic */
+    .logo-container {
+        flex: 0 1 auto;
+        max-width: 100px;
+        overflow: hidden;
+    }
+    .logo-container img {
+        height: 28px;
+        width: auto;
+    }
+
+    
+
+    /* 3. SEARCH (LUPA) */
+    .mobile-only {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-wrapper {
+        position: static;
+        flex: 0 0 auto;
+
+        margin-left: auto;
+        margin-right: 40px;
+    }
+
+    .header-actions {
+        display: none;;
+    }
+
+    /* Logica de afișare input search */
+    .search-input-container {
+      display: none; 
+      position: absolute;
+      
+      /* SCHIMBAREA PRINCIPALĂ: */
+      top: 100%; /* Îl împinge sub header (100% din înălțimea headerului) */
+      left: 0;
+      width: 100%;
+      height: 60px; /* O înălțime fixă, suficientă pentru input */
+      
+      background-color: var(--header-bg, #1a1a1a); /* Același fundal ca header-ul */
+      border-top: 1px solid rgba(255, 255, 255, 0.1); /* O linie fină de separare */
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2); /* Umbră ca să se vadă că e peste pagină */
+      
+      z-index: 998; /* Peste conținutul paginii, dar sub meniul burger (dacă e deschis) */
+      padding: 0 15px;
+      align-items: center;
+    }
+
+    .search-wrapper.active .search-input-container {
+        display: flex;
+    }
+    
+    .search-wrapper.active .search-bar {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.1); /* Ușor mai deschis decât fundalul */
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 4px; /* Colțuri ușor rotunjite */
+        color: white;
+        padding: 8px 10px;
+        height: 40px; /* Înălțimea inputului */
+    }
+
+    /* Ajustare buton de trimitere (lupa din input) */
+    .search-wrapper.active .search-submit-btn {
+        right: 25px; /* Ajustat să nu fie lipit de margine */
+        filter: invert(1);
+    }
+    
+    /* Ascundem și burgerul când e search-ul deschis, ca să nu fie aglomerat */
+    .search-wrapper.active ~ #mobile-burger-placeholder {
+        display: none; 
+    }
 }
 
 

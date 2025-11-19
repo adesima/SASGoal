@@ -7,11 +7,10 @@
   /* background-color: #121212; */
   color: var(--text-color);
   border-radius: 10px;
-  overflow: hidden;
+  /* overflow: visible; */
 }
 
 .league-table thead {
-  /* background-color: #e41e26; roșu La Liga */
   position: sticky;
   top: 0;
   z-index: 1;
@@ -28,15 +27,9 @@
 .league-table td {
   padding: 10px 8px;
   font-size: 14px;
-  /* border-bottom: 1px solid #2b2b2b; */
-}
-
-.league-table tbody tr:nth-child(even) {
-  /* background-color: #1e1e1e; */
 }
 
 .league-table tbody tr:hover {
-  /* background-color: #2a2a2a; */
   transition: background 0.2s ease-in-out;
 }
 

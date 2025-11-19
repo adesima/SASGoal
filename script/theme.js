@@ -5,12 +5,14 @@ function updateIcons() {
     document.getElementById('help-icon').src = '/images/buttons/help-icon-lm.png';
     document.getElementById('theme-icon').src = '/images/buttons/theme-icon-lm.png';
     document.getElementById('search-icon').src = '/images/buttons/search-icon-lm.png';
+    document.getElementById('logo').src = '/images/SASGoal-lm.png';
   } else { // dark mode
     document.getElementById('fav-icon').src = '/images/buttons/favourite_team-logo-dm.png';
     document.getElementById('profile-icon').src = '/images/buttons/user-icon-dm.png';
     document.getElementById('help-icon').src = '/images/buttons/help-icon-dm.png';
     document.getElementById('theme-icon').src = '/images/buttons/theme-icon-dm.png';
     document.getElementById('search-icon').src = '/images/buttons/search-icon-dm.png';
+    document.getElementById('logo').src = '/images/SASGoal-dm.png';
   }
 }
 
