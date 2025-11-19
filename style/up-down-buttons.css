@@ -1,5 +1,5 @@
 :root {
-    --up-down-buttons: #000000; /* modifici în funcție de light / dark mode */
+    --up-down-buttons: var(--updown-btn-bg-color); /* modifici în funcție de light / dark mode */
 }
 
 #upDownButtons {

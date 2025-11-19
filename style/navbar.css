@@ -1,34 +1,4 @@
-/* Navbar Styles
-.navbar-container {
-    display: flex;
-    justify-content: left;
-    background-color: #333;
-    padding: 10px;
-}
-
-.navbar-container button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-.navbar-container button:hover {
-    background-color: #0056b3;
-}
-
-.navbar-container button:active {
-    background-color: #003f7f;
-}
-
- */
-
- /* Navbar Styles */
+/* Navbar Styles */
 .navbar-container {
     display: flex;
     justify-content: left;
@@ -79,12 +49,12 @@
     font-size: 26px;
     background: none;
     border: none;
-    color: white;
+    color: var(--burger-color);
     cursor: pointer;
 }
 
 .mobile-user-actions {
-    ddisplay: none; /* Ascuns pe desktop */
+    display: none; /* Ascuns pe desktop */
 }
 
 /* --- MOBILE MENU STYLING --- */
@@ -105,7 +75,7 @@
         /* Design Vizual */
         /* background-color: #1a1a1a; Un gri foarte închis, elegant */
         /* Design Vizual - Stil "Glassmorphism" */
-        background-color: rgba(26, 26, 26, 0.85); /* Negru cu transparență (0.85 = 85% vizibil) */
+        background-color: var(--navbar-color-mobile); /* Negru cu transparență (0.85 = 85% vizibil) */
         backdrop-filter: blur(10px);              /* Efectul de ceață în spatele meniului */
         -webkit-backdrop-filter: blur(10px);      /* Obligatoriu pentru să meargă pe iPhone/Safari */
         box-shadow: -5px 0 15px rgba(0,0,0,0.5); /* Umbră în stânga pentru profunzime */
@@ -126,7 +96,7 @@
     /* Stilizarea Link-urilor (Butoanelor) din meniu */
     .nav-links a button {
         background-color: transparent; /* Fără fundal albastru */
-        color: #fff;
+        color: var(--text-color);
         width: 100%;
         text-align: left; /* Textul aliniat la stânga arată mai bine în liste */
         padding: 15px 10px;

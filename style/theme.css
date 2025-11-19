@@ -2,13 +2,13 @@
     /* General */
     --bg-color: #1e1e1e;
     --text-color: #ffffff;
-    --footer-color: #111111;
 
     /* Navbar */
-    --navbar-color: #008304;
-    --burger-color: #ffffff;
-    --navbar-button-color: #008304;
+    --navbar-color: #256f2a;
+    --burger-color: var(--text-color);
+    --navbar-button-color: var(--navbar-color);
     --navbar-button-hover-color: #004502;
+    --navbar-color-mobile: rgba(26, 26, 26, 0.65);
 
     /* Header */
     --header-color: var(--footer-color);
@@ -17,34 +17,54 @@
     /* Leagues */
     --card-color: #2b2b2b;
 
+    /* Tables */
+    --table-color: #001e03;
+    --table-even-color: #00280b;
+    --table-color-hover: #000000;
+    --table-border-color: #004d0a;
+
     /* Contact */
     --form-bg-color: #343333;
     --form-btn-color: var(--navbar-color);
     --form-btn-hover-color: var(--navbar-button-hover-color);
 
+    /* Footer */
+    --footer-color: #111111;
+    --footer-text-color: #bbbbbb;
+
+    /* Up/Down Buttons */
+    --updown-btn-bg-color: var(--navbar-color);
 }
 
 body.light-mode {
     /* General */
-    --bg-color: #dae7d7;
+    --bg-color: #f3f4f6;
     --text-color: #121212;
-    --footer-color: #afc5a9;
 
     /* Navbar */
-    --navbar-color: #40cf45;
-    --burger-color: #121212;
-    --navbar-button-color: #40cf45;
-    --navbar-button-hover-color: #007f00;
+    --navbar-color: #15803D;
+    --navbar-button-color: var(--navbar-color);
+    --navbar-button-hover-color: #005900;
+    --burger-color: var(--text-color);
+    --navbar-color-mobile: rgba(200, 200, 200, 0.65);
     
     /* Header */
-    --header-color: var(--footer-color);
+    --header-color: #ffffff;
     --header-button-hover-color: #859680;
 
     /* Leagues */
     --card-color: #e6e6e6;
 
+    /* Tables */
+    --table-color: #cff5cf;
+    --table-even-color: #eaeaea;
+    --table-color-hover: #8ad79d;
+    --table-border-color: #86aa86;
+
     /* Contact */
     --form-bg-color: #ffffff;
-    --form-btn-color: var(--navbar-color);
-    --form-btn-hover-color: var(--navbar-button-hover-color);
+
+    /* Footer */
+    --footer-color: #1F2937;
+    --footer-text-color: #ffffff;
 }
