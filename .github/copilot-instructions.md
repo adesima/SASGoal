@@ -4,7 +4,7 @@
 SASGoal is a web-based project organized by domain: `competitions`, `leagues`, and `main`. The structure is primarily static HTML, with folders for future expansion (`components`, `script`, `style`). The project appears to be focused on sports or event management, with pages for competitions and leagues.
 
 ## Key Directories & Files
-- `pages/main/index.html`: Main landing page. Entry point for navigation.
+- `pages/mainindex.html`: Main landing page. Entry point for navigation.
 - `pages/main/competitions.html`, `pages/main/leagues.html`: Main views for competitions and leagues.
 - `pages/competitions/teams/`, `pages/leagues/teams/`: Reserved for team-specific content (currently empty).
 - `components/`, `script/`, `style/`: Intended for reusable UI, JS, and CSS (currently empty).
