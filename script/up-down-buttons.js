@@ -6,7 +6,7 @@
         const placeholder = document.querySelector('[data-up-down-placeholder]') || document.createElement('div');
         if (!placeholder.parentNode) document.body.appendChild(placeholder);
 
-        fetch('/components/up-down-buttons.html')
+        fetch('components/up-down-buttons.html')
             .then(resp => {
                 if (!resp.ok) throw new Error('Failed to fetch up-down-buttons');
                 return resp.text();

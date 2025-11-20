@@ -1,59 +1,4 @@
-// fetch('/components/header.html')
-//                 .then(response => response.text())
-//                 .then(data => {
-//                     document.getElementById('header-placeholder').innerHTML = data;
-
-//                     const searchBtn = document.getElementById('mobile-search-btn');
-//                     const searchWrapper = document.getElementById('search-wrapper');
-//                     const searchInput = document.getElementById('search-input');
-
-//                     if (searchBtn && searchWrapper) {
-//                         // Când dai click pe lupă
-//                         searchBtn.addEventListener('click', (e) => {
-//                             e.stopPropagation(); // Oprește click-ul să se ducă mai departe
-//                             searchWrapper.classList.toggle('active'); // Activează/Dezactivează clasa CSS
-                            
-//                             // Punem cursorul automat în input pentru a scrie direct
-//                             if (searchWrapper.classList.contains('active') && searchInput) {
-//                                 searchInput.focus();
-//                             }
-//                         });
-
-//                         // Când dai click oriunde în afara header-ului, închidem search-ul
-//                         document.addEventListener('click', (e) => {
-//                             if (!searchWrapper.contains(e.target)) {
-//                                 searchWrapper.classList.remove('active');
-//                             }
-//                         });
-//                     }
-//                 });
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     const searchBtn = document.getElementById('mobile-search-btn');
-//     const searchWrapper = document.getElementById('search-wrapper');
-//     const searchInput = document.getElementById('search-input');
-
-//     // Deschide search-ul pe mobil
-//     searchBtn.addEventListener('click', (e) => {
-//         searchWrapper.classList.add('active');
-//         document.body.classList.add('search-is-open');
-//         searchInput.focus(); // Pune cursorul automat in input
-//         e.stopPropagation();
-//     });
-
-//     // Inchide search-ul daca dai click oriunde in afara lui
-//     document.addEventListener('click', (e) => {
-//         if (searchWrapper.classList.contains('active')) {
-//             if (!searchWrapper.contains(e.target)) {
-//                 searchWrapper.classList.remove('active');
-//                 document.body.classList.remove('search-is-open');
-//             }
-//         }
-//     });
-// });
-
-
-fetch('/components/header.html')
+fetch('components/header.html')
     .then(response => response.text())
     .then(data => {
         // 1. Injectăm Header-ul în pagină
@@ -64,15 +9,15 @@ fetch('/components/header.html')
         // ============================================================
         const sitePages = [
             { 
-                url: '/pages/leagues/la-liga/la-liga.html', 
+                url: 'pages/leagues/la-liga/la-liga.html', 
                 keywords: ['laliga', 'la liga', 'spania'] 
             },
             { 
-                url: '/pages/leagues/la-liga/teams/barcelona.html', 
+                url: 'pages/leagues/la-liga/teams/barcelona.html', 
                 keywords: ['barcelona', 'barca', 'fc barcelona'] 
             },
             { 
-                url: '/pages/leagues/superliga/superliga.html', 
+                url: 'pages/leagues/superliga/superliga.html', 
                 keywords: ['superliga', 'liga 1', 'romania'] 
             },
             // Poți adăuga alte pagini aici urmând modelul de mai sus
