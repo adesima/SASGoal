@@ -1,6 +1,5 @@
 .video-container {
     position: relative;
-    /* padding-bottom: 56.25%; 16:9 ratio */
     height: 575px; /* înălțime fixă pentru desktop */
     overflow: hidden;
     max-width: 1024px; /* maxim la desktop */
