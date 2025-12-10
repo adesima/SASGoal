@@ -5,27 +5,6 @@ h1 {
   color: #333;
 }
 
-.table-wrapper {
-
-  /* display: block;       Se comportă ca un bloc standard */
-  /* width: 100%;          Ocupă lățimea ecranului */
-  /* max-width: 1024px; */
-  /* margin: 10px auto; */
-  
-  /* AICI E SCHIMBAREA: */
-  /* overflow-x: auto;      */
-  /* overflow-y: visible;  IMPORTANT: Lasă conținutul să curgă jos (nu îl taie) */
-  
-  /* Resetăm înălțimea ca să fim siguri */
-  /* height: auto !important; */
-  /* max-height: none !important; */
-
-  /* Stiluri vizuale */
-  /* border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3); */
-  /* -webkit-overflow-scrolling: touch; Scroll fin pe mobil */
-} 
-
 .team-table {
   width: 100%;
   /* min-width: 900px; */
@@ -79,11 +58,5 @@ h1 {
   
   h1 {
     font-size: 1.5rem;
-  }
-
-  .table-wrapper {
-    display: block;
-    overflow-x: scroll;
-    max-width: fit-content;
   }
 }
