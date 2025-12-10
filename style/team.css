@@ -13,7 +13,7 @@ h1 {
   /* margin: 10px auto; */
   
   /* AICI E SCHIMBAREA: */
-  overflow-x: auto;     
+  /* overflow-x: auto;      */
   /* overflow-y: visible;  IMPORTANT: Lasă conținutul să curgă jos (nu îl taie) */
   
   /* Resetăm înălțimea ca să fim siguri */
@@ -79,5 +79,11 @@ h1 {
   
   h1 {
     font-size: 1.5rem;
+  }
+
+  .table-wrapper {
+    display: block;
+    overflow-x: scroll;
+    max-width: fit-content;
   }
 }
