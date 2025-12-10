@@ -1,16 +1,28 @@
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 10px auto;
+  max-width: 1024px;
+  border-radius: 10px; /* Mutăm rotunjirea aici */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Mutăm umbra aici */
+}
+
 .league-table {
   width: 100%;
-  max-width: 1024px;
+  /* max-width: 1024px; */
   border-collapse: collapse;
-  margin: 10px auto;
+  /* margin: 10px auto; */
   font-family: "Poppins", sans-serif;
   text-align: center;
   color: var(--text-color);
   background-color: var(--table-color);
-  border-radius: 10px;
+  /* border-radius: 10px; */
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); */
+  /* overflow: hidden; */
+
+  min-width: 800px;
 }
 
 .league-table thead {
