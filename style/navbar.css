@@ -72,6 +72,9 @@
         width: 280px; /* Nu % - o lățime fixă arată mai bine pe mobil */
         height: 100vh; /* Toată înălțimea ecranului */
         
+        overflow-y: auto;
+        overflow-x: hidden;
+
         /* Design Vizual */
         /* background-color: #1a1a1a; Un gri foarte închis, elegant */
         /* Design Vizual - Stil "Glassmorphism" */
