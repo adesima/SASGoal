@@ -8,6 +8,7 @@ h1 {
 .table-wrapper {
   width: 100%;
   overflow-x: auto; /* Asta activează scroll-ul orizontal */
+  overflow-y: visible;
   -webkit-overflow-scrolling: touch; /* Pentru scroll lin pe iPhone/iPad */
   margin: 10px auto;
   max-width: 1024px; /* Păstrăm lățimea maximă aici */
@@ -23,7 +24,7 @@ h1 {
   background: var(--table-color);
   color: var(--text-color);
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
   /* box-shadow: 0 10px 30px rgba(0,0,0,0.3); */
   border-collapse: collapse;
   min-width: 900px;
