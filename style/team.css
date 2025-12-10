@@ -5,14 +5,15 @@ h1 {
   color: #333;
 }
 
-/* .table-wrapper {
-  display: block;       /* Se comportă ca un bloc standard */
+.table-wrapper {
+
+  /* display: block;       Se comportă ca un bloc standard */
   /* width: 100%;          Ocupă lățimea ecranului */
   /* max-width: 1024px; */
   /* margin: 10px auto; */
   
   /* AICI E SCHIMBAREA: */
-  /* overflow-x: auto;     Permite scroll Stânga-Dreapta */
+  overflow-x: auto;     
   /* overflow-y: visible;  IMPORTANT: Lasă conținutul să curgă jos (nu îl taie) */
   
   /* Resetăm înălțimea ca să fim siguri */
@@ -23,7 +24,7 @@ h1 {
   /* border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3); */
   /* -webkit-overflow-scrolling: touch; Scroll fin pe mobil */
-/* }  */
+} 
 
 .team-table {
   width: 100%;
