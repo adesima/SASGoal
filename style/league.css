@@ -1,16 +1,21 @@
 .table-wrapper {
-  width: 100%;
-  max-width: 1024px; /* Păstrăm lățimea maximă aici */
-  height: auto !important;
-  min-height: 200px;
-  
-  overflow-x: auto; /* Asta activează scroll-ul orizontal */
-  overflow-y: hidden;
-
-  -webkit-overflow-scrolling: touch; /* Pentru scroll lin pe iPhone/iPad */
+  display: block;       /* Se comportă ca un bloc standard */
+  width: 100%;          /* Ocupă lățimea ecranului */
+  max-width: 1024px;
   margin: 10px auto;
-  border-radius: 12px; /* Mutăm rotunjirea pe wrapper */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Mutăm umbra pe wrapper */
+  
+  /* AICI E SCHIMBAREA: */
+  overflow-x: auto;     /* Permite scroll Stânga-Dreapta */
+  overflow-y: visible;  /* IMPORTANT: Lasă conținutul să curgă jos (nu îl taie) */
+  
+  /* Resetăm înălțimea ca să fim siguri */
+  height: auto !important;
+  max-height: none !important;
+
+  /* Stiluri vizuale */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  -webkit-overflow-scrolling: touch; /* Scroll fin pe mobil */
 }
 
 .league-table {
